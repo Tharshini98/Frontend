@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const instance = axios.create({
-  baseURL: "https://ecommerce-backend-imft.onrender.com", 
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL || "https://ecommerce-backend-imft.onrender.com/api", 
+  withCredentials: true,
 });
 
-export default instance;
+export default api;
