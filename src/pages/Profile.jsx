@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import axios from '../services/api';
+import api from '../services/api';
 
 const Profile = () => {
     const [user, setUser] = useState({name: '', email: ''});
@@ -8,7 +8,7 @@ const Profile = () => {
 
     const fetchProfile = async () => {
         try{
-            const res = await axios.get('/users/me');
+            const res = await api.get('/users/me');
             setUser({name: res.data.name, email: res.data.email});
         } catch (err) {
             console.error('Failed to fetch user profile', err);

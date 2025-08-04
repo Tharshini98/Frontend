@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import axios from '../services/api';
+import api from '../services/api';
 import {useNavigate} from 'react-router-dom';
 
 const SellerProfile = () => {
@@ -24,7 +24,7 @@ const SellerProfile = () => {
 
         const handleSubmit = async(e) => {
             e.preventDefault();
-            await axios.put('/users/profile', formData);
+            await api.put('/users/profile', formData);
             alert('Store profile updated');
             navigate('/seller/dashboard');
         };

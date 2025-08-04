@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from '../services/api';
+import api from '../services/api';
 import { Link } from 'react-router-dom';
 
 const SellerDashboard = () => {
@@ -34,7 +34,7 @@ const SellerDashboard = () => {
   );
 
   function handleDelete(id) {
-    axios.delete(`/products/${id}`).then(() => {
+    api.delete(`/products/${id}`).then(() => {
       setProducts(products.filter((p) => p._id !== id));
     });
   }

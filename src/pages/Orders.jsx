@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
+import api from "../services/api"; 
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
         const fetchOrders = async() => {
-            const res = await axios.get("/api/orders/my");
+            const res = await api.get("/api/orders/my");
             setOrders(res.data);
         };
         fetchOrders();

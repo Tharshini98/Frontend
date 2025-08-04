@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 px-4">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">
-        Welcome to MERN E-Commerce
+        Welcome to  Shop-Zone
       </h1>
       <p className="text-lg text-gray-700 mb-8 text-center max-w-xl">
         Discover a wide range of products. Sign up to start shopping or selling your own products today!

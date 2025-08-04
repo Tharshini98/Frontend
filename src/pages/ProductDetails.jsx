@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "../services/api";
+import api from "../services/api";
 import { useCart } from "../context/CartContext";
 
 const ProductDetails = () => {
@@ -11,7 +11,7 @@ const ProductDetails = () => {
 
   const fetchProduct = async () => {
     try {
-      const { data } = await axios.get(`/products/${id}`);
+      const { data } = await api.get(`/products/${id}`);
       setProduct(data);
     } catch (err) {
       console.error("Product not found", err);

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "../services/api";
+import api from "../services/api";
 
 const SellerOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -7,7 +7,7 @@ const SellerOrders = () => {
   const fetchOrders = async () => {
     try {
       const sellerId = localStorage.getItem("userId");
-      const { data } = await axios.get(`/seller/orders/${sellerId}`);
+      const { data } = await api.get(`/seller/orders/${sellerId}`);
       setOrders(data);
     } catch (err) {
       console.error("Error fetching orders", err);
@@ -16,7 +16,7 @@ const SellerOrders = () => {
 
   const updateStatus = async (orderId, newStatus) => {
     try {
-      await axios.put(`/seller/orders/${orderId}/status`, { status: newStatus });
+      await api.put(`/seller/orders/${orderId}/status`, { status: newStatus });
       fetchOrders();
     } catch (err) {
       console.error("Status update failed", err);

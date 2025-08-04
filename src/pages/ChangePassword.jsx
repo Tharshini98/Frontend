@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from "../services/api"; 
 import { useNavigate } from "react-router-dom";
 
 const ChangePassword = () => {
@@ -18,7 +18,7 @@ const ChangePassword = () => {
     e.preventDefault();
     try {
       const token = localStorage.getItem("token"); // assumed stored token
-      const res = await axios.post(
+      const res = await api.post(
         "https://your-backend-url/api/auth/change-password",
         form,
         {

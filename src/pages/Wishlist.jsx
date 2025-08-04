@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import axios from "../services/api";
+import api from "../services/api";
 import {Link} from "react-router-dom";
 import {toast} from "react-toastify";
 
@@ -7,7 +7,7 @@ const Wishlist = () => {
     const[wishlist, setWishlist] = useState([]);
     const fetchWishlist = async() => {
         try{
-            const{data} = await axios.get("/users/wishlist", {
+            const{data} = await api.get("/users/wishlist", {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
@@ -25,7 +25,7 @@ const Wishlist = () => {
 
     const removeFromWishlist = async (productId) => {
         try{
-            await axios.delete(`/users/wishlist/${productId}`, {
+            await api.delete(`/users/wishlist/${productId}`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("token")}`,
                 },
