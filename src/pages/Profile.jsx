@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
-import api from "../services/api"; // your axios instance
+import api from "../services/api"; 
 import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-  const { user, login, token } = useAuth(); // get token from context
+  const { user, login, token } = useAuth(); 
   const [formData, setFormData] = useState({ name: "", email: "" });
   const navigate = useNavigate();
 

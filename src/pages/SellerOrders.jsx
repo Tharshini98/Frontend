@@ -4,10 +4,10 @@ import api from "../services/api";
 const SellerOrders = () => {
   const [orders, setOrders] = useState([]);
 
-  // Fetch orders for logged-in seller
+ 
   const fetchOrders = async () => {
     try {
-      // Get user token and id from localStorage
+     
       const storedUser = JSON.parse(localStorage.getItem("user"));
       if (!storedUser) {
         console.error("No user logged in");
@@ -16,7 +16,7 @@ const SellerOrders = () => {
       const token = storedUser.token;
       const sellerId = storedUser._id;
 
-      // Correct API endpoint and pass Authorization header
+      
       const { data } = await api.get(`/orders/seller/${sellerId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -27,7 +27,7 @@ const SellerOrders = () => {
     }
   };
 
-  // Update order status
+  
   const updateStatus = async (orderId, newStatus) => {
     try {
       const storedUser = JSON.parse(localStorage.getItem("user"));

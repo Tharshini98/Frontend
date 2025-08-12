@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../services/api"; // your centralized axios instance
+import api from "../services/api"; 
 import { toast } from "react-toastify";
 
 const Wishlist = () => {

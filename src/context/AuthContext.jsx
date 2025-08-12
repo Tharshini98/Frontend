@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
-    console.log("🔁 From localStorage:", storedUser);
+    console.log(" From localStorage:", storedUser);
     if (storedUser && storedUser !== "undefined") {
       try {
         setUser(JSON.parse(storedUser));
@@ -19,10 +19,10 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = (userData) => {
-    console.log("✅ Saving to localStorage:", userData);
+    console.log("Saving to localStorage:", userData);
     setUser(userData);
     localStorage.setItem("user", JSON.stringify(userData));
-    localStorage.setItem("token", userData.token); // <--- Save token separately here
+    localStorage.setItem("token", userData.token); 
   };
 
   const logout = () => {
@@ -31,7 +31,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
   };
 
-  const token = localStorage.getItem("token"); // optionally expose token here
+  const token = localStorage.getItem("token");
 
   return (
     <AuthContext.Provider value={{ user, setUser, login, logout, token }}>

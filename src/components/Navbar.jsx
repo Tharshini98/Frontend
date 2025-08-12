@@ -1,14 +1,13 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useCart } from "../context/CartContext";  // <-- import cart context
-
+import { useCart } from "../context/CartContext";  
 const Navbar = () => {
   const { user, logout } = useAuth();
-  const { items } = useCart();  // <-- get cart items
+  const { items } = useCart();  
   const navigate = useNavigate();
 
-  // Calculate total quantity of items in cart
+
   const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
 
   const handleLogout = () => {
@@ -31,7 +30,7 @@ const Navbar = () => {
               <>
                 <Link to="/products" className="text-gray-600 hover:text-indigo-600">Products</Link>
                 <Link to="/cart" className="text-gray-600 hover:text-indigo-600">
-                  Cart ({totalItems}) {/* Show count here */}
+                  Cart ({totalItems}) 
                 </Link>
                 <Link to="/orders" className="text-gray-600 hover:text-indigo-600">My Orders</Link>
                 <Link to="/wishlist" className="text-gray-600 hover:text-indigo-600">Wishlist</Link>

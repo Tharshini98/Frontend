@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
-import AddToWishlistButton from "../components/AddToWishlistButton"; // ✅ update path if needed
+import AddToWishlistButton from "../components/AddToWishlistButton"; 
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -105,7 +105,7 @@ const ProductList = () => {
                 Seller: {product.seller?.name}
               </p>
 
-              {/* ✅ Wishlist button added here */}
+              
               <AddToWishlistButton productId={product._id} />
             </div>
           </div>

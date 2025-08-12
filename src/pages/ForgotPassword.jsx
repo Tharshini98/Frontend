@@ -8,7 +8,7 @@ const ForgotPassword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // ✅ Removed extra /api from path
+     
       await api.post("/auth/forgot-password", { email });
       setMessage("Password reset link sent to your email.");
     } catch (err) {

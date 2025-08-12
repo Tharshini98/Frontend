@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 const Home = () => {
-  const { user } = useAuth(); // get logged-in user
-
+  const { user } = useAuth(); 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-100 to-purple-200 px-4">
       <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">
@@ -14,7 +13,7 @@ const Home = () => {
         Discover a wide range of products. Sign up to start shopping or selling your own products today!
       </p>
       <div className="flex gap-4">
-        {/* Show Browse Products only if user is NOT a seller */}
+       
         {user?.role !== "seller" && (
           <Link
             to="/products"
@@ -24,7 +23,7 @@ const Home = () => {
           </Link>
         )}
 
-        {/* Show Login/Register only if user is NOT logged in or NOT a seller */}
+        
         {(!user || user.role !== "seller") && (
           <>
             <Link

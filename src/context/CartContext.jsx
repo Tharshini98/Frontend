@@ -32,7 +32,7 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // <<< Add this function >>>
+
   const clearCart = () => {
     setItems([]);
   };
@@ -48,5 +48,5 @@ export const CartProvider = ({ children }) => {
   );
 };
 
-// Export the hook
+
 export const useCart = () => useContext(CartContext);

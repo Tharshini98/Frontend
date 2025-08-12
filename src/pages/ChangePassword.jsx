@@ -25,7 +25,7 @@ const ChangePassword = () => {
 
     try {
       await api.post(
-        "/auth/change-password", // ✅ No full URL, uses baseURL from api.js
+        "/auth/change-password", 
         form,
         {
           headers: {

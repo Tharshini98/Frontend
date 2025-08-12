@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../../services/api"; // ✅ use your configured Axios instance
+import api from "../../services/api"; 
 import { useAuth } from "../../context/AuthContext";
 
 const MyProducts = () => {

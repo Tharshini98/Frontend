@@ -43,7 +43,7 @@ const Orders = () => {
             <ul className="mt-2">
               {order.items.map((item) => (
                 <li key={item._id}>
-                  {/* Adjust this if your item.product has name */}
+                 
                   {item.product?.name || item.name} X {item.quantity}
                 </li>
               ))}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import api from "../services/api"; // Axios instance with baseURL
+import api from "../services/api"; 
 
 const SellerDashboard = () => {
   const { user } = useAuth();
@@ -38,7 +38,7 @@ const SellerDashboard = () => {
     <div className="p-6 space-y-6">
       <h1 className="text-3xl font-bold mb-4">Seller Dashboard</h1>
 
-      {/* Overview Section */}
+    
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-white shadow rounded-xl p-6">
           <h2 className="text-xl font-semibold mb-2">Total Products</h2>
@@ -46,15 +46,15 @@ const SellerDashboard = () => {
         </div>
         <div className="bg-white shadow rounded-xl p-6">
           <h2 className="text-xl font-semibold mb-2">Total Sales</h2>
-          <p className="text-2xl font-bold">₹ 0</p> {/* optional static or fetch later */}
+          <p className="text-2xl font-bold">₹ 0</p> 
         </div>
         <div className="bg-white shadow rounded-xl p-6">
           <h2 className="text-xl font-semibold mb-2">Pending Orders</h2>
-          <p className="text-2xl font-bold">0</p> {/* same here */}
+          <p className="text-2xl font-bold">0</p> 
         </div>
       </div>
 
-      {/* Add Product Button */}
+      
       <div className="flex justify-end">
         <Link
           to="/seller/add-product"
@@ -64,7 +64,7 @@ const SellerDashboard = () => {
         </Link>
       </div>
 
-      {/* My Products */}
+     
       <div>
         <h2 className="text-2xl font-bold mb-4">My Products</h2>
 

@@ -24,29 +24,29 @@ const Checkout = () => {
   const { token, email } = JSON.parse(storedUser);
 
   try {
-    // Load Razorpay SDK script
+   
     const scriptLoaded = await loadRazorpayScript();
     if (!scriptLoaded) {
       alert("Razorpay SDK failed to load. Check your connection.");
       return;
     }
 
-    // Get Razorpay Key
+   
     const keyRes = await api.get("/orders/razorpay-key", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const razorpayKey = keyRes.data.key;
 
-    // Create Razorpay order on backend
+    
     const orderRes = await api.post(
       "/orders",
-      { amount: Number(totalPrice) }, // make sure amount is number
+      { amount: Number(totalPrice) }, 
       { headers: { Authorization: `Bearer ${token}` } }
     );
 
     const { id: orderId, amount, currency } = orderRes.data;
 
-    // Open Razorpay Checkout
+    
     const options = {
       key: razorpayKey,
       amount: amount.toString(),
@@ -55,7 +55,7 @@ const Checkout = () => {
       description: "Order Payment",
       order_id: orderId,
       handler: async function (response) {
-        // Save order after successful payment
+      
         await api.post(
           "/orders/save-order",
           {

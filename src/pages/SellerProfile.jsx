@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "../services/api"; // axios instance with baseURL
+import api from "../services/api"; 
 import { useAuth } from "../context/AuthContext";
 
 const SellerProfile = () => {
@@ -9,7 +9,7 @@ const SellerProfile = () => {
     email: "",
     address: "",
     phone: "",
-    shopName: "",     // Added shopName here
+    shopName: "",     
   });
   const [loading, setLoading] = useState(false);
 
@@ -22,7 +22,7 @@ const SellerProfile = () => {
         email: user.email || "",
         address: user.address || "",
         phone: user.phone || "",
-        shopName: user.shopName || "",   // Initialize shopName
+        shopName: user.shopName || "",  
       });
     }
   }, [user]);

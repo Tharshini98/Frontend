@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import api from "../services/api"; // Axios instance with baseURL
+import api from "../services/api"; 
 import { useAuth } from "../context/AuthContext";
 
 const AddProduct = () => {
-  const { id } = useParams(); // productId if editing
+  const { id } = useParams(); 
   const navigate = useNavigate();
   const { user } = useAuth();
 
@@ -19,7 +19,7 @@ const AddProduct = () => {
 
   useEffect(() => {
     if (id) {
-      // Fetch product for edit
+      
       const fetchProduct = async () => {
         try {
           const res = await api.get(`/products/${id}`, {
@@ -57,11 +57,11 @@ const AddProduct = () => {
       };
 
       if (id) {
-        // Edit product
+        
         await api.put(`/products/${id}`, formData, config);
         alert("Product updated successfully");
       } else {
-        // Add product
+        
         const payload = { ...formData, seller: user._id };
         await api.post("/products", payload, config);
         alert("Product added successfully");
